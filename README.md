@@ -1,6 +1,6 @@
 # generator-ng-section
 
-[Yeoman generator]() for creating new section/module/sub-module.
+[Yeoman generator](http://yeoman.io/generators/) for creating new section/module/sub-module.
 
 Content of the created files follows the John Papa style guide. Refer my [ionic seed](https://github.com/amiteshhh/ionicseed) project which this generator can best augment.
 
@@ -18,7 +18,7 @@ Content of the created files follows the John Papa style guide. Refer my [ionic 
 * __skip-add__ : optional flag. Pass this flag if you dont want to add the reference file in index.html. This feature is in progress :)
 * __skip-dep__ : optional flag. Pass this flag if you dont want to add the new module as a dependency to your `app` module. This feature is in progress :)
 
-> If _module name_ argument contains the period character(.) say `app.about` we consider only equivalent extension while creating folder/file name.
+> If _module name_ argument contains the period character `.`, say `app.about`, we consider only equivalent extension while creating folder/file name.
   However angular module name will still be the same as provided one inside created files.
 
 
