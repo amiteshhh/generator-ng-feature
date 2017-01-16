@@ -2,19 +2,19 @@
     'use strict';
     /**
      * Module: <%= moduleName %>
-     * Controller: 
-     * Description:
+     * Controller: <%= pascalSuffix %>Ctrl
+     * Description: Controller to manage <%= folderName %>
      * 
      */
     var moduleName = '<%= moduleName %>';
 
     angular.module(moduleName)
-        .controller('<%= capital %>Ctrl', Ctrl);
+        .controller('<%= pascalSuffix %>Ctrl', Ctrl);
 
     Ctrl.$inject = ['$injector', '$rootScope'];
     function Ctrl($injector, $rootScope) {
         var vm = this;
-        var <%= capital %>Svc = $injector.get('<%= capital %>Svc');
+        var <%= pascalSuffix %>Svc = $injector.get('<%= pascalSuffix %>Svc');
 
         init();
 
@@ -23,7 +23,7 @@
         }
 
         function _sampleOperation() {
-            <%= capital %>Svc.sampleOperation().then(function (data) {
+            <%= pascalSuffix %>Svc.sampleOperation().then(function (data) {
 
             }).catch(handleServiceError)
                 .finally(function () {

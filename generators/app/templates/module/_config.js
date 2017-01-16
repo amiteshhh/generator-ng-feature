@@ -3,7 +3,7 @@
     /**
      * Module: <%= moduleName %>
      * Configuration and Routing related stuff
-     * Tweak the rout config as per the state and folder structure
+     * Note: #### Tweak the route config as per your state and folder structure  ####
      */
     var moduleName = '<%= moduleName %>';
 
@@ -16,7 +16,7 @@
             views: {
                 'menuContent': {
                     templateUrl: 'app/main/<%= folderName %>/<%= folderName %>.html',
-                    controller: '"<%= capital %>Ctrl" as vm'
+                    controller: '"<%= pascalSuffix %>Ctrl" as vm'
                 }
             }
         });
