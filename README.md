@@ -1,66 +1,65 @@
-# generator-generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-generator.svg?branch=master)](https://travis-ci.org/yeoman/generator-generator) [![Coverage Status](https://coveralls.io/repos/yeoman/generator-generator/badge.svg?branch=master&service=github)](https://coveralls.io/github/yeoman/generator-generator?branch=master)
+# generator-ng-section
 
+Yeoman generator for creating new section/module/sub-module.
 
-> Yeoman generator generating a Yeoman generator
-
-![Yo dawg, I heard you like generators?](http://i.imgur.com/2gqiift.jpg)
-
+Content of the created files follows the John Papa style guide. Refer [ionic seed](https://github.com/amiteshhh/ionicseed) project which this generator can best augment.
 
 ## Getting started
 
-- Install: `npm install -g generator-generator`
-- Run: `yo generator`
+- Install: `npm install -g generator-ng-section`
+- Run: `yo ng-section params...`
 
 
 ## Commands
 
-* `yo generator` shows a wizard for generating a new generator
-* `yo generator:subgenerator <name>` generates a subgenerator with the name `<name>`
+`yo ng-section <module name> [relative path] [--skip-add] [--skip-dep]`
+* __module name__ : required. It is the angular module name which you want to create. Folder/file names will be driven by this.
+* __relative path__: optional. Path to parent under which new folder will be created.
+* __skip-add__ : optional flag. Pass this flag if you dont want to add the reference file in index.html. This feature is in progress :)
+* __skip-dep__ : optional flag. Pass this flag if you dont want to add the new module as a dependency to your `app` module. This feature is in progress :)
+
+> If _module name_ argument contains the period character(.) say `app.about` we consider only equivalent extension while creating folder/file name.
+  However angular module name will still be the same as provided one inside created files.
 
 
-## What do you get?
+>By default, folder is created in the directory from which command is invoked.
 
-Scaffolds out a complete generator directory structure for you:
+
+## Example
+ `yo ng-section about` or `yo ng-section mymoule.someother.about`
+
+### What do you get?
+
+Both command will create a folder named 'about'and other relevant files as shown below:
 
 ```
 .
-├── generators/
-│   └── app/
-│       ├── index.js
-│       └── templates/
-│           └── dummyfile.txt
-├── .editorconfig
-├── .gitattributes
-├── .gitignore
-├── .eslintrc
-├── .travis.yml
-├── .yo-rc.json
-├── package.json
-├── gulpfile.js
-├── README.md
-├── LICENSE
-└── test/
-    └── app.js
+├── about/
+│   └── about.module.js
+│   └── about.route.js
+│   └── about.service.js
+│   └── about.controller.js
+│   └── about.html
+
 ```
 
-Refer to [our documentation](http://yeoman.io/authoring/) to learn more about creating a Yeoman generator.
+## Providing relative path argument
 
-### Running tests
+It could be annoying if each time you have to `cd` to parent directory and then invoke it to appropriately place the created folder. The way out is passing second argument.
 
-Run `npm test` to run your test suite.
+`yo ng-section about www/app`
+It will create _about_ folder in the path `root > www > app`
 
-These tests will be run automatically in your git repository if you connect [Travis CI](https://travis-ci.org/profile). You can also track test coverage using [Coveralls](https://coveralls.io).
 
-## Contributing
+## File Content
+Refer [`example` folder](https://github.com/amiteshhh/generator-ng-section/tree/master/generators/example) of this repository.
 
-See the [contribution docs](http://yeoman.io/contributing/).
+## Future Enhancement
 
-When submitting an issue, please follow [the
-guidelines](http://yeoman.io/contributing/opening-issues.html).
-It is especially important to make sure Yeoman is up-to-date, and providing the
-command or commands that cause the issue.
-
+* Adding reference of created files to index.html
+* Adding module dependency of created module in the app module.
+* support for configuring the index file, main angular module app file, relative path for project.
 
 ## License
 
-MIT © Pascal Hartig <phartig@rdrei.net> and other contributors
+MIT
