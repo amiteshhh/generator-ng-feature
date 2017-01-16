@@ -1,13 +1,13 @@
 # generator-ng-section
 
-Yeoman generator for creating new section/module/sub-module.
+[Yeoman generator]() for creating new section/module/sub-module.
 
-Content of the created files follows the John Papa style guide. Refer [ionic seed](https://github.com/amiteshhh/ionicseed) project which this generator can best augment.
+Content of the created files follows the John Papa style guide. Refer my [ionic seed](https://github.com/amiteshhh/ionicseed) project which this generator can best augment.
 
 ## Getting started
 
 - Install: `npm install -g generator-ng-section`
-- Run: `yo ng-section params...`
+- Run: `yo ng-section`
 
 
 ## Commands
@@ -52,13 +52,13 @@ It will create _about_ folder in the path `root > www > app`
 
 
 ## File Content
-Refer [`example` folder](https://github.com/amiteshhh/generator-ng-section/tree/master/generators/example) of this repository.
+Refer `example` [folder](https://github.com/amiteshhh/generator-ng-section/tree/master/example) of this repository.
 
 ## Future Enhancement
 
 * Adding reference of created files to index.html
 * Adding module dependency of created module in the app module.
-* support for configuring the index file, main angular module app file, relative path for project.
+* support for configuring the path for index file, main angular module app file and relative path for project.
 
 ## License
 
