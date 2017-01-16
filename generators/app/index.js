@@ -25,8 +25,8 @@ module.exports = Generator.extend({
         this.option('skip-add');//to customize reference adding in index.html
 
         // And you can then access it later; e.g.
-        this.log(this.options.moduleName);
-        this.log(this.options.skipdep);
+        //this.log(this.options.moduleName);
+        //this.log(this.options.skipdep);
 
     },
 
