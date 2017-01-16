@@ -2,7 +2,7 @@
 
 [Yeoman generator](http://yeoman.io/generators/) for creating new section/module/sub-module.
 
-Content of the created files follows the John Papa style guide. Refer my [ionic seed](https://github.com/amiteshhh/ionicseed) project which this generator can best augment.
+Content of the created files follows the John Papa [style guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md). Refer my [ionic seed](https://github.com/amiteshhh/ionicseed) project which this generator can best augment.
 
 ## Getting started
 
@@ -30,10 +30,9 @@ Content of the created files follows the John Papa style guide. Refer my [ionic 
 
 ### What do you get?
 
-Both command will create a folder named 'about'and other relevant files as shown below:
+Both command will create a folder named `about` and other relevant files as shown below:
 
 ```
-.
 ├── about/
 │   └── about.module.js
 │   └── about.route.js
