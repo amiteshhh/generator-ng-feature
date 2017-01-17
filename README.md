@@ -2,6 +2,8 @@
 
 [Yeoman generator](http://yeoman.io/generators/) for creating new section/module/sub-module.
 
+>It is not designed to scaffold entire project, rather it just creates components/sub-modules for you.
+
 Content of the created files follows the John Papa [style guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md). Refer my [ionic seed](https://github.com/amiteshhh/ionicseed) project which this generator can best augment.
 
 ## Getting started
