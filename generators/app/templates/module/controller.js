@@ -1,10 +1,14 @@
 (function () {
     'use strict';
     /**
-     * Module: <%= moduleName %>
-     * Controller: <%= pascalSuffix %>Ctrl
-     * Description: Controller to manage <%= folderName %>
-     * 
+     * @ngdoc object
+     * @name <%= moduleName %>.<%= pascalSuffix %>Ctrl:<%= pascalSuffix %>Ctrl
+     *
+     * @description
+     * <%= pascalSuffix %>Ctrl controller.
+     *
+     * @requires $injector
+     * @requires $rootScope
      */
     var moduleName = '<%= moduleName %>';
 
@@ -18,6 +22,14 @@
 
         init();
 
+        /**
+         * @ngdoc function  
+         * @name <%= moduleName %>.<%= pascalSuffix %>Ctrl#init
+         *
+         * @description
+         * I am method of <%= pascalSuffix %>Ctrl.
+         * @methodOf <%= moduleName %>.<%= pascalSuffix %>Ctrl:<%= pascalSuffix %>Ctrl
+         */
         function init() {
             //_sampleOperation();
         }

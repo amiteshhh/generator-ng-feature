@@ -1,5 +1,12 @@
 (function () {
     'use strict';
+    /**
+     * @ngdoc object
+     * @name <%= moduleName %>
+     *
+     * @description
+     * This is `<%= moduleName %>` module.
+     */
 
     var moduleName = '<%= moduleName %>',
             requires = [];

@@ -51,7 +51,7 @@ It will create _about_ folder in the path `root > www > app`
 
 
 ## File Content
-Refer `example` [folder](https://github.com/amiteshhh/generator-ng-section/tree/master/example) of this repository.
+Refer `sampleFolder/example` [folder](https://github.com/amiteshhh/generator-ng-section/tree/master/sampleFolder/example) of this repository to view the sample files.
 
 ## Future Enhancement
 

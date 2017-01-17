@@ -1,10 +1,14 @@
 (function () {
     'use strict';
     /**
-     * Module: app.example
-     * Controller: ExampleCtrl
-     * Description: Controller to manage example
-     * 
+     * @ngdoc object
+     * @name app.example.ExampleCtrl:ExampleCtrl
+     *
+     * @description
+     * ExampleCtrl controller.
+     *
+     * @requires $injector
+     * @requires $rootScope
      */
     var moduleName = 'app.example';
 
@@ -18,6 +22,14 @@
 
         init();
 
+        /**
+         * @ngdoc function  
+         * @name app.example.ExampleCtrl#init
+         *
+         * @description
+         * I am method of ExampleCtrl.
+         * @methodOf app.example.ExampleCtrl:ExampleCtrl
+         */
         function init() {
             //_sampleOperation();
         }

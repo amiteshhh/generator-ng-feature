@@ -1,17 +1,23 @@
 (function () {
     'use strict';
+
     /**
-     * Module: app.example
-     * Service: ExampleSvc
-     * Description: Service to manage example
-     * Note: #### Tweak the dependency like APP_CONFIG as per your requirement ####
+     * @ngdoc service  
+     * @name app.example.ExampleSvc
+     *
+     * @description
+     * Service to manage `app.example` module
+     *
+     * @requires $http
+     * @requires $q
+     * @requires APP_CONFIG
      */
 
     var moduleName = 'app.example';
 
     angular.module(moduleName)
         .service('ExampleSvc', Svc);
-
+    /* Tweak the dependency like APP_CONFIG as per your requirement */
     Svc.$inject = ['$http', '$q', 'APP_CONFIG'];
     function Svc($http, $q, APP_CONFIG) {
 
@@ -19,7 +25,18 @@
             sampleOperation: _sampleOperation
         };
 
-        function _sampleOperation() {
+        /**
+         * @ngdoc function  
+         * @name app.example.ExampleSvc#sampleOperation
+         *
+         * @description
+         * It does sample operation.
+         * @param {number} Id Employee Id.
+         * 
+         * @methodOf app.about.AboutSvc
+         * @returns {Promise} which resolves to list of items
+         */
+        function _sampleOperation(id) {
             var deferred = $q.defer();
             var url = APP_CONFIG.SERVER_URL + APP_CONFIG.REST_ENDPOINT + '/example/';
             $http.get(url).then(function (response) {
