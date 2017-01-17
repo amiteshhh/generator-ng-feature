@@ -1,6 +1,6 @@
 {
   "name": "generator-ng-section",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An AngularJS module generator following John Papa's best practices",
   "homepage": "",
   "repository": {
