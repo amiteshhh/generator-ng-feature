@@ -16,7 +16,7 @@
             views: {
                 'menuContent': {
                     templateUrl: 'app/main/<%= folderName %>/<%= folderName %>.html',
-                    controller: '"<%= pascalSuffix %>Ctrl" as vm'
+                    controller: '<%= pascalSuffix %>Ctrl as vm'
                 }
             }
         });
