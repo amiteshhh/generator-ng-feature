@@ -35,7 +35,7 @@ Consider below project structure
 │       └── css/
 │       └── app/ /* This is where your all modules resides*/
 │           └── about/
-│           └── index.module.js /* This is where your define all your angular dependencies*/
+│           └── index.module.js /* This is where you define all your angular dependencies*/
 
 ```
 For this structure `www` is the client directory, `app` is the parentModule folder under which new folder/components will be created.
