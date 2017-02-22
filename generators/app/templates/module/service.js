@@ -1,16 +1,17 @@
 (function () {
     'use strict';
     /**
-     * Module: <%= moduleName %>
-     * Service: <%= pascalSuffix %>Svc
-     * Description: Service to manage <%= folderName %>
-     * Note: #### Tweak the dependency like APP_CONFIG as per your requirement ####
+     * @ngdoc service
+     * @module <%= moduleName %>
+     * @name <%= componentNamePrefix %>Svc
+     * @description
+     * Service to manage <%= folderName %>
      */
 
     var moduleName = '<%= moduleName %>';
 
     angular.module(moduleName)
-        .service('<%= pascalSuffix %>Svc', Svc);
+        .service('<%= componentNamePrefix %>Svc', Svc);
 
     Svc.$inject = ['$http', '$q', 'APP_CONFIG'];
     function Svc($http, $q, APP_CONFIG) {

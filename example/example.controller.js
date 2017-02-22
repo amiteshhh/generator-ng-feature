@@ -1,11 +1,14 @@
 (function () {
     'use strict';
     /**
-     * Module: app.example
-     * Controller: ExampleCtrl
-     * Description: Controller to manage example
-     * 
+     * @ngdoc controller
+     * @module app.example
+     * @name ExampleCtrl
+     * @description
+     * Controller to manage example
+     * @requires #/api/app.example/service/ExampleSvc ExampleSvc
      */
+    
     var moduleName = 'app.example';
 
     angular.module(moduleName)

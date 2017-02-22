@@ -1,10 +1,11 @@
 (function () {
     'use strict';
     /**
-     * Module: app.example
-     * Service: ExampleSvc
-     * Description: Service to manage example
-     * Note: #### Tweak the dependency like APP_CONFIG as per your requirement ####
+     * @ngdoc service
+     * @module app.example
+     * @name ExampleSvc
+     * @description
+     * Service to manage example
      */
 
     var moduleName = 'app.example';

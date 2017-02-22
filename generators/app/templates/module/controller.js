@@ -1,20 +1,23 @@
 (function () {
     'use strict';
     /**
-     * Module: <%= moduleName %>
-     * Controller: <%= pascalSuffix %>Ctrl
-     * Description: Controller to manage <%= folderName %>
-     * 
+     * @ngdoc controller
+     * @module <%= moduleName %>
+     * @name <%= componentNamePrefix %>Ctrl
+     * @description
+     * Controller to manage <%= folderName %>
+     * @requires #/api/<%= moduleName %>/service/<%= componentNamePrefix %>Svc <%= componentNamePrefix %>Svc
      */
+    
     var moduleName = '<%= moduleName %>';
 
     angular.module(moduleName)
-        .controller('<%= pascalSuffix %>Ctrl', Ctrl);
+        .controller('<%= componentNamePrefix %>Ctrl', Ctrl);
 
     Ctrl.$inject = ['$injector', '$rootScope'];
     function Ctrl($injector, $rootScope) {
         var vm = this;
-        var <%= pascalSuffix %>Svc = $injector.get('<%= pascalSuffix %>Svc');
+        var <%= componentNamePrefix %>Svc = $injector.get('<%= componentNamePrefix %>Svc');
 
         init();
 
@@ -23,7 +26,7 @@
         }
 
         function _sampleOperation() {
-            <%= pascalSuffix %>Svc.sampleOperation().then(function (data) {
+            <%= componentNamePrefix %>Svc.sampleOperation().then(function (data) {
 
             }).catch(handleServiceError)
                 .finally(function () {

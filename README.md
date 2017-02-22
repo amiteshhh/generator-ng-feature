@@ -7,30 +7,82 @@ Content of the created files follows the John Papa [style guide](https://github.
 ## Getting started
 
 - Install: `npm install -g generator-ng-section`
-- Run: `yo ng-section`
+- Run: `yo ng-section` _ofcourse you will be providing other arguments as well_
 
 
 ## Commands
 
-`yo ng-section <module name> [relative path] [--skip-add] [--skip-dep]`
+`yo ng-section <module name> [relative path] [--skip-add]`
 * __module name__ : required. It is the angular module name which you want to create. Folder/file names will be driven by this.
-* __relative path__: optional. Path to parent under which new folder will be created.
-* __skip-add__ : optional flag. Pass this flag if you dont want to add the reference file in index.html. This feature is in progress :)
-* __skip-dep__ : optional flag. Pass this flag if you dont want to add the new module as a dependency to your `app` module. This feature is in progress :)
+* __relative path__: optional. Path to parent under which new folder will be created. It is relative to the client directory.
+* __skip-add__ : optional flag. Pass this flag if you don't want to add the newly created components script reference in `index.html` and module dependency injection to main module(typically `root > www > app > index.module.js`.
 
 > If _module name_ argument contains the period character `.`, say `app.about`, we consider only equivalent extension while creating folder/file name.
-  However angular module name will still be the same as provided one inside created files.
+  However angular module name will still be the same as provided one.
 
 
->By default, folder is created in the directory from which command is invoked.
+## Configuration
+
+When you invoke the command for first time you will be asked to provide default path for your client source directory, main folder which contains the angular modules and main module file which contains all of the dependency of sub-modules.
+
+Consider below project structure
+
+```
+├── root/
+│   └── www/ /* This is your source/client directory*/
+│       └── index.html
+│       └── lib/
+│       └── css/
+│       └── app/ /* This is where your all modules resides*/
+│           └── about/
+│           └── index.module.js /* This is where your define all your angular dependencies*/
+
+```
+For this structure `www` is the client directory, `app` is the parentModule folder under which new folder/components will be created.
+
+You can specify these values when you run the command first time or by directly edition `.yo-rc.json` file directly. Once setup done this file will look like below
+
+```
+{
+  "generator-ng-section": {
+    "promptValues": {
+      "wwwPath": "www",
+      "appModulesParentPath": "app",
+      "mainModuleFilePath": "app/index.module.js"
+    }
+  }
+}
+```
+
+
+In order to automatically inject the new module as a dependency, your main module file (`index.module.js` in this example) must have a dependency array `requires` as defined below
+
+```
+(function () {
+    'use strict';
+
+    var moduleName = 'app',
+            requires = [                                
+                // app core
+                'app.core',
+                // home module
+                "app.home"
+
+            ];
+
+    angular.module(moduleName, requires);
+
+})();
+
+```
 
 
 ## Example
- `yo ng-section about` or `yo ng-section mymoule.someother.about`
+ `yo ng-section about` or `yo ng-section about app` or `yo ng-section mymoule.someother.about`
 
 ### What do you get?
 
-Both command will create a folder named `about` and other relevant files as shown below:
+Both command will create a folder named `about` and other relevant files under `root > www > app` as shown below:
 
 ```
 ├── about/
@@ -41,23 +93,25 @@ Both command will create a folder named `about` and other relevant files as show
 │   └── about.html
 
 ```
+`yo ng-section about --skip-add`
+It will create the above directory but neither script reference will be added to `index.html` nor the dependency of `about` module will be injected to `index.module.js` file.
 
 ## Providing relative path argument
 
-It could be annoying if each time you have to `cd` to parent directory and then invoke it to appropriately place the created folder. The way out is passing second argument.
+`yo ng-section about common` or `yo ng-section app.about common`
+It will create _about_ folder in the path `root > www > common`
 
-`yo ng-section about www/app`
-It will create _about_ folder in the path `root > www > app`
+`yo ng-section somemodule my/nested/folder`
+It will create _somemodule_ folder in the path `root > www > my > nested > folder`
+
+>Plugin will automaticall create non-existent directory.
 
 
-## File Content
+## Generated File Content
 Refer `example` [folder](https://github.com/amiteshhh/generator-ng-section/tree/master/example) of this repository.
 
-## Future Enhancement
-
-* Adding reference of created files to index.html
-* Adding module dependency of created module in the app module.
-* support for configuring the path for index file, main angular module app file and relative path for project.
+## Request New Feature
+Need new features? Please create a feature request on Github.
 
 ## License
 
