@@ -3,9 +3,9 @@ All notable changes to this project is documented in this file.
 
 ## [1.0.0] - 2017-02-23
 ### New Feature
-- Support for configuring the path of Client/front-end codebase path relative to project directory, `index file`, main angular module app file (typically in `index.module.js`) and main app path (typically `app` folder under which all your submodukes resides). 
+- Support for configuring the path for client/front-end codebase folder relative to project directory, main angular module app file (typically `app/index.module.js`) and main app path (typically `app` folder under which all your submodules resides). 
 
-    This configuration creates `.yo-rc.json` file which you can modify later directly.
+    Configuration is created when you run the command for first time and is stored in `.yo-rc.json` file which you can modify later directly.
 - Created modules/components script reference added to `index.html` and module dependency injected to main module 
 - Added support for bypassing above operation by  passing argument `--skip-add` while invoking command
 
