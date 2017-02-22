@@ -38,7 +38,7 @@ Consider below project structure
 │           └── index.module.js /* This is where you define all your angular dependencies*/
 
 ```
-For this structure `www` is the client directory, `app` is the parentModule folder under which new folder/components will be created.
+For this structure `www` is the client directory, `app` is the parentModule folder under which new folder/components will be created and `app/index.module.js` is the main module file where new module dependency would be injected.
 
 You can specify these values when you run the command first time or by directly editing `.yo-rc.json`. Once setup is done this file looks like below
 
