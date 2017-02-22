@@ -40,7 +40,11 @@ Consider below project structure
 ```
 For this structure `www` is the client directory, `app` is the parentModule folder under which new folder/components will be created and `app/index.module.js` is the main module file where new module dependency would be injected.
 
-You can specify these values when you run the command first time or by directly editing `.yo-rc.json`. Once setup is done this file looks like below
+You can specify these values when you run the command first time or by directly editing `.yo-rc.json`. 
+
+**If most of time you want the new folder to be created inside `root > www > app > main` you can specify main module parent path as `app/main` instead of default `app` i.e `"appModulesParentPath": "app/main"`**
+
+Once setup is done this file looks like below
 
 ```
 {
