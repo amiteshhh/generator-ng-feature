@@ -40,7 +40,7 @@ Consider below project structure
 ```
 For this structure `www` is the client directory, `app` is the parentModule folder under which new folder/components will be created.
 
-You can specify these values when you run the command first time or by directly edition `.yo-rc.json` file directly. Once setup done this file will look like below
+You can specify these values when you run the command first time or by directly editing `.yo-rc.json`. Once setup is done this file looks like below
 
 ```
 {
@@ -94,6 +94,7 @@ Both command will create a folder named `about` and other relevant files under `
 
 ```
 `yo ng-section about --skip-add`
+
 It will create the above directory but neither script reference will be added to `index.html` nor the dependency of `about` module will be injected to `index.module.js` file.
 
 ## Providing relative path argument
