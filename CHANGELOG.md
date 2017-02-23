@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project is documented in this file.
 
-## [1.0.2] - 2017-02-23
+## [1.1.0] - 2017-02-24
 ### Changed
 
 __Script reference addition:__ If build comment `<!-- endbuild -->` exists in the the `index.html`, reference is added just before last comment otherwise It is appended as a last child of `<body>` tag.
