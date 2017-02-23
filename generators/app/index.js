@@ -141,7 +141,18 @@ module.exports = Generator.extend({
                 scriptTags +
                 '  <!--  End of module : ' + props.moduleName + '  -->\n';
 
-            $body.append(scriptTags);
+            //get best insertion point
+            //is there any endbuild comment tag exists
+            var regexBuild = /endbuild/;
+            var $buildTagComments = $body.contents().filter(function () {
+                return this.nodeType === 8 && regexBuild.test(this.nodeValue);
+            });
+            var $buildTagElement = $buildTagComments[$buildTagComments.length-1];
+            if($buildTagElement){
+                $($buildTagElement).before(scriptTags);
+            }else{
+                $body.append(scriptTags);
+            }
 
             fs.writeFile(indexFilePath, $.html(), function (err) {
                 if (err) {
@@ -217,7 +228,7 @@ module.exports = Generator.extend({
             if (configs && configs.promptValues) {
                 wwwPath = configs.promptValues.wwwPath;
                 appModulesParentPath = configs.promptValues.appModulesParentPath;
-                if(appModulesParentPath){
+                if (appModulesParentPath) {
                     baseParentFolder = appModulesParentPath.split('/')[0];
                 }
                 baseParentFolder = appModulesParentPath || baseParentFolder;
@@ -232,7 +243,7 @@ module.exports = Generator.extend({
 
             mainModuleFilePath = path.join(wwwPath, mainModuleFilePath);
 
-            var replace = baseParentFolder +'\/';
+            var replace = baseParentFolder + '\/';
             var regex = new RegExp(replace, "i");
 
             routeUrl = path.posix.join(appModulesParentPath, props.folderName).replace(regex, '');

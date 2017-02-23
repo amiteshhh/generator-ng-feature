@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project is documented in this file.
 
+## [1.0.2] - 2017-02-23
+### Changed
+
+__Script reference addition:__ If build comment `<!-- endbuild -->` exists in the the `index.html`, reference is added just before last comment otherwise It is appended as a last child of `<body>` tag.
+
 ## [1.0.0] - 2017-02-23
 ### New Feature
 - Support for configuring the path for client/front-end codebase folder relative to project directory, main angular module app file (typically `app/index.module.js`) and main app path (typically `app` folder under which all your submodules resides). 

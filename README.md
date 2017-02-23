@@ -107,6 +107,8 @@ It will create a folder named `about` and other relevant files under `root > www
 
 It will create the above directory but neither script reference will be added to `index.html` nor the dependency of `about` module will be injected to `index.module.js` file.
 
+>__Script reference addition:__ If build comment `<!-- endbuild -->` exists in the the `index.html`, reference is added just before last comment otherwise It is appended as a last child of `<body>` tag.
+
 ## Providing relative path argument
 
 `yo ng-section about common` or `yo ng-section app.about common`
