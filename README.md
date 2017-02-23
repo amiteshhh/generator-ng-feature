@@ -20,7 +20,7 @@ Content of the created files follows the John Papa [style guide](https://github.
 
 `yo ng-section <module name> [relative path] [--skip-add]`
 * __module name__ : required. It is the angular module name which you want to create. Folder/file names will be driven by this.
-* __relative path__: optional. Path to parent under which new folder will be created. It is relative to the client/www directory.
+* __relative path__: optional. Path to parent under which new folder will be created. It is relative to the www directory.
 * __skip-add__ : optional flag. Pass this flag if you don't want to add the newly created components script reference in `index.html` and module dependency injection to main module(typically `root > www > app > index.module.js`.
 
 > If _module name_ argument contains the period character `.`, say `app.about`, we consider only equivalent extension while creating folder/file name.
@@ -44,7 +44,7 @@ Consider below project structure
 │       └── index.module.js /* This is where you define all your angular dependencies */
 
 ```
-For this structure `www` is the client directory, `app` is the parentModule folder under which new folder/components will be created and `app/index.module.js` is the main module file where new module dependency would be injected.
+For this structure `www` is the client directory, `app` is the parentModule folder under which new folder/module will be created and `app/index.module.js` is the main module file where new module dependency would be injected.
 
 You can specify these values when you run the command for the first time or by directly editing `.yo-rc.json` later as per your project structure. 
 
