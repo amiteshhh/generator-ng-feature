@@ -52,7 +52,7 @@ You can specify these values when you run the command for the first time or by d
 
 Once setup is done this file looks like below
 
-```
+```js
 {
   "generator-ng-section": {
     "promptValues": {
@@ -67,7 +67,7 @@ Once setup is done this file looks like below
 
 In order to automatically inject the new module as a dependency, your main module file (`index.module.js` in this example) must have a dependency array `requires` as defined below
 
-```
+```js
 (function () {
     'use strict';
 
